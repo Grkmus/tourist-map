@@ -53,5 +53,5 @@ $(document).ready(function(){
         ayaSofyaImage.setOpacity(0);
         cerceve.setStyle({opacity:0});
     });
-    
+   
 });
