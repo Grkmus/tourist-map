@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8" >
     <script  src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.js"></script>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
@@ -75,8 +76,8 @@
   </div><!-- /.container-fluid -->
 </nav>
 </nav>
-<div class="modal fade">
-  <div class="modal-dialog">
+<div id="sultanAhmetModal" class="modal fade">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -93,6 +94,28 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
     
+    <div id="ayaSofyaModal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+          <img src="http://www.planetware.com/photos-large/TR/turkey-istanbul-aya-sofya.jpg" style="height:200px; width:400px; margin:10px; float:left;" 
+        <p>It's said that when the Byzantine Emperor Justinian entered his finished church for the first time in AD 536, he cried out "Glory to God that I have been judged worthy of such a work. Oh Solomon, I have outdone you!" The Aya Sofya (formerly the Hagia Sophia) was the emperor's swaggering statement to the world of the wealth and technical ability of his empire. Tradition maintained that the area surrounding the emperor's throne within the church was the official centre of the world. Through its conversion to a mosque after the Ottoman armies conquered Constantinople to its further conversion into a museum in the 20th century, the Aya Sofya has remained one of Istanbul's most cherished landmarks.
+<br/>
+          
+Location: Aya Sofya Medanı, Sultanahmet
+Official site: <a href="http://www.ayasofyamuzesi.gov.tr">www.ayasofyamuzesi.gov.tr</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
     <div id="map"></div>
 
 

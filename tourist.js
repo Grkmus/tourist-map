@@ -23,9 +23,35 @@ $(document).ready(function(){
 
     ayasofya.on('click', function(e){
         map.setView(ayasofya.getLatLng(),20);
+        $('#ayaSofyaModal').modal('show');
     });
     sultanAhmet.on('click', function(e){
         map.setView(sultanAhmet.getLatLng(),20);
+        $('#sultanAhmetModal').modal('show');
     });
-
+    var ayaSofya = "http://www.planetware.com/photos-large/TR/turkey-istanbul-aya-sofya.jpg",
+    imageBounds = [[41.00963318437629, 28.977679610252377], [41.00902598369244, 28.978940248489383]];
+    
+    var cerveveBounds = [[41.008362104541405, 28.979954123497006],
+                         [41.00902598369244, 28.978940248489383],
+                         [41.00962104041744, 28.978929519653317],
+                         [41.00963318437629, 28.977679610252377],
+                         [41.00905027182723, 28.977765440940857],
+                         [41.00902598369244, 28.978940248489383 ]];
+    
+    var cerceve = L.polyline(cerveveBounds, {color:'gray', opacity:0}).addTo(map);
+    
+    var ayaSofyaImage = L.imageOverlay(ayaSofya, imageBounds,{
+        opacity:0
+    }).addTo(map);
+    
+    ayasofya.on('mouseover', function(){
+        ayaSofyaImage.setOpacity(0.7);
+        cerceve.setStyle({opacity:0.7});
+    });
+    ayasofya.on('mouseout', function(){
+        ayaSofyaImage.setOpacity(0);
+        cerceve.setStyle({opacity:0});
+    });
+    
 });
