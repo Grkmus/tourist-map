@@ -52,7 +52,7 @@ $(document).ready(function () {
   "features": [
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {}, 
       "geometry": {
         "type": "Polygon",
         "coordinates": [
