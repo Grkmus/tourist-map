@@ -1,11 +1,16 @@
 $(document).ready(function () {
 	
-    L.mapbox.accessToken = 'pk.eyJ1IjoiZ3JrbXVzIiwiYSI6Ilk4SXZBQ0EifQ.Jzfmsskd9_bcWSo0dIgezg';
+    //------------------------------DECLARING MAP--------------------
+    
+  
 	
-    var baseMap = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    });
-    var basemap2 = L.mapbox.tileLayer('grkmus.ldgjk96a');
+    var baseMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+});
+    var baseMap2 =L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+});
+    
  
    var map = L.map('map',{
         center: [41.01047516006517, 28.97133350372314],
@@ -17,349 +22,32 @@ $(document).ready(function () {
         console.log(e.latlng);
     });
     
-    var ayasofya = L.marker([41.00838639292091, 28.97994875907898]).addTo(map);
+    // ---------------------------DECLARING PLACE PROPERTIES: MARKERS,GEOJSONs etc -------------------
+    var placeStyle1 = function(){
+        return {
+            color: "#FF8000",
+            stroke: false,
+            fillOpacity: 0.8
+        };
+    };
+    var placeStyle2 = function(){
+        return {
+            stroke: true,
+            color:"#FF4000",
+            weight: 7,
+            opacity: 1,
+            fillColor: "#FF8000",
+            fillOpacity: 1,
+            lineCap: "round",
+            
+        };
+    };
     
-    var ayaSofyaGeojson = {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              28.97918969392776,
-              41.00811112409563
-            ],
-            [
-              28.979280889034268,
-              41.00821030196666
-            ],
-            [
-              28.979444503784183,
-              41.00813743660658
-            ],
-            [
-              28.97946327924728,
-              41.00816172506889
-            ],
-            [
-              28.979578614234924,
-              41.00811517217492
-            ],
-            [
-              28.979616165161133,
-              41.008169821221
-            ],
-            [
-              28.979980945587158,
-              41.00797956138326
-            ],
-            [
-              28.979908525943756,
-              41.00790871981397
-            ],
-            [
-              28.980088233947757,
-              41.00780549339094
-            ],
-            [
-              28.9802223443985,
-              41.00795324880929
-            ],
-            [
-              28.98027330636978,
-              41.00792288813391
-            ],
-            [
-              28.980407416820523,
-              41.00808481157417
-            ],
-            [
-              28.980713188648227,
-              41.008309479688435
-            ],
-            [
-              28.980868756771088,
-              41.00847747426429
-            ],
-            [
-              28.980820477008816,
-              41.00851188273904
-            ],
-            [
-              28.9808714389801,
-              41.008562483404546
-            ],
-            [
-              28.980793654918674,
-              41.008613084031204
-            ],
-            [
-              28.980769515037537,
-              41.00860093988437
-            ],
-            [
-              28.980670273303982,
-              41.008663684619
-            ],
-            [
-              28.980718553066254,
-              41.00868392484325
-            ],
-            [
-              28.98074001073837,
-              41.00871833321019
-            ],
-            [
-              28.98074001073837,
-              41.00875274155914
-            ],
-            [
-              28.980737328529358,
-              41.00877298175601
-            ],
-            [
-              28.98070514202118,
-              41.00879726998405
-            ],
-            [
-              28.98066759109497,
-              41.00880739007644
-            ],
-            [
-              28.980638086795807,
-              41.00880739007644
-            ],
-            [
-              28.98060858249664,
-              41.008805366058105
-            ],
-            [
-              28.980589807033535,
-              41.00878917390906
-            ],
-            [
-              28.98057103157043,
-              41.008754765579106
-            ],
-            [
-              28.980565667152405,
-              41.00872238125218
-            ],
-            [
-              28.980589807033535,
-              41.00869404495304
-            ],
-            [
-              28.980613946914673,
-              41.0086738047319
-            ],
-            [
-              28.980597853660583,
-              41.008647492435145
-            ],
-            [
-              28.980479836463925,
-              41.00870214103974
-            ],
-            [
-              28.98058444261551,
-              41.008829654274216
-            ],
-            [
-              28.98042887449264,
-              41.00892275901971
-            ],
-            [
-              28.980364501476288,
-              41.008853942481366
-            ],
-            [
-              28.9802947640419,
-              41.00889239879106
-            ],
-            [
-              28.980233073234558,
-              41.008829654274216
-            ],
-            [
-              28.980192840099335,
-              41.008853942481366
-            ],
-            [
-              28.980265259742737,
-              41.008936927121624
-            ],
-            [
-              28.980112373828888,
-              41.009023959680796
-            ],
-            [
-              28.980039954185486,
-              41.00892883106375
-            ],
-            [
-              28.979967534542087,
-              41.00896728732974
-            ],
-            [
-              28.98003190755844,
-              41.00904015177214
-            ],
-            [
-              28.979972898960114,
-              41.00908265599302
-            ],
-            [
-              28.97999435663223,
-              41.009102896088564
-            ],
-            [
-              28.979892432689667,
-              41.00916159233046
-            ],
-            [
-              28.979809284210205,
-              41.009078607973166
-            ],
-            [
-              28.979731500148773,
-              41.00911504014291
-            ],
-            [
-              28.97968053817749,
-              41.00906039188074
-            ],
-            [
-              28.979546427726746,
-              41.00911908816052
-            ],
-            [
-              28.979474008083347,
-              41.00903812776095
-            ],
-            [
-              28.97962152957916,
-              41.00897943140907
-            ],
-            [
-              28.979546427726746,
-              41.00890454288421
-            ],
-            [
-              28.979519605636597,
-              41.00892275901971
-            ],
-            [
-              28.979492783546444,
-              41.008900494853386
-            ],
-            [
-              28.979535698890686,
-              41.00887823067956
-            ],
-            [
-              28.97950083017349,
-              41.00885191846445
-            ],
-            [
-              28.97947669029236,
-              41.008866086581584
-            ],
-            [
-              28.979457914829254,
-              41.008849894447465
-            ],
-            [
-              28.979490101337433,
-              41.008829654274216
-            ],
-            [
-              28.97945255041122,
-              41.00878917390906
-            ],
-            [
-              28.979423046112057,
-              41.008813462131144
-            ],
-            [
-              28.979398906230927,
-              41.00879726998405
-            ],
-            [
-              28.9794310927391,
-              41.008777029794636
-            ],
-            [
-              28.979412317275997,
-              41.00874464547865
-            ],
-            [
-              28.979385495185852,
-              41.008758813618854
-            ],
-            [
-              28.97935599088669,
-              41.00873250135604
-            ],
-            [
-              28.97939085960388,
-              41.00871833321019
-            ],
-            [
-              28.97932916879654,
-              41.00864142036517
-            ],
-            [
-              28.97919774055481,
-              41.00870214103974
-            ],
-            [
-              28.97914409637451,
-              41.00863130024729
-            ],
-            [
-              28.979170918464657,
-              41.00861915610382
-            ],
-            [
-              28.979052901268005,
-              41.00850581065658
-            ],
-            [
-              28.979181647300717,
-              41.00843699368278
-            ],
-            [
-              28.979098498821255,
-              41.008351984380646
-            ],
-            [
-              28.97921115159988,
-              41.00828923934918
-            ],
-            [
-              28.979232609272007,
-              41.008311503722005
-            ],
-            [
-              28.979270160198208,
-              41.00829733548562
-            ],
-            [
-              28.979130685329434,
-              41.00815565295414
-            ],
-            [
-              28.97918969392776,
-              41.00811112409563
-            ]
-          ]
-        ]
-      }};
-    var ayaSofyaGeojsonFeature = L.geoJson(ayaSofyaGeojson).addTo(map);
-    var sultanAhmet = L.marker([41.00539885506838, 28.976558446884155]).addTo(map);
-    var sultanAhmetGeoJsonFeature = L.geoJson({
+    // ** Ayasofya
+    
+    var ayasofyaMarker = L.marker([41.00838639292091, 28.97994875907898],{opacity:0.0}).addTo(map);
+    
+    var ayaSofyaGeoJson = {
   "type": "FeatureCollection",
   "features": [
     {
@@ -369,34 +57,84 @@ $(document).ready(function () {
         "type": "Polygon",
         "coordinates": [
           [
-            [
-              28.975925445556637,
-              41.00556280882898
-            ],
-            [
-              28.976461887359616,
-              41.00601620969745
-            ],
-            [
-              28.97744625806808,
-              41.0053442037242
-            ],
-            [
-              28.976904451847073,
-              41.00489079823207
-            ],
-            [
-              28.975925445556637,
-              41.00556280882898
-            ]
+            [28.979130685329434,41.008149580838854],
+            [28.979237973690033,41.00827304707329],
+            [28.979095816612244,41.00834388825089],
+            [28.9791789650917,41.008441041742046],
+            [28.97906899452209,41.00849973857353],
+            [28.979634940624234,41.00914337626098],
+            [28.97981196641922,41.009078607973166],
+            [28.97988706827164,41.00915349630019],
+            [28.98088216781616,41.00856653145613],
+            [28.980817794799805,41.008509858711626],
+            [28.98087412118912,41.008487594405814],
+            [28.980267941951748,41.007928960270114],
+            [28.980233073234558,41.00795324880929],
+            [28.980104327201843,41.007801445292614],
+            [28.979919254779816,41.00790669576802],
+            [28.979972898960114,41.00797753733951],
+            [28.979618847370148,41.00816374910702],
+            [28.97952497005463,41.00809493177597],
+            [28.979283571243286,41.00820422985639],
+            [28.97918701171875,41.00811719621448],
+            [28.979130685329434,41.008149580838854]
           ]
         ]
       }
+        
     }
   ]
-}).addTo(map);
-    var topkapi = L.marker([41.01262862585457, 28.984293937683105]).addTo(map);
-    var topkapiGeoJsonFeature = L.geoJson({
+}
+    var ayaSofyaGeojsonFeature = L.geoJson(ayaSofyaGeoJson,{
+        
+    style: placeStyle1
+    
+    }).addTo(map);
+    var ayaSofyaImage = L.imageOverlay("http://www.planetware.com/photos-large/TR/turkey-istanbul-aya-sofya.jpg", [[41.01542964520331, 28.96815776824951], [41.00934172874638, 28.97716999053955]],{
+        opacity:0 /*Because i want it to appear when i hover to marker*/
+    }).addTo(map);
+    
+    /////////////////////////////
+    // **SULTANAHMET //
+    /////////////////////
+    
+    var sultanahmetMarker = L.marker([41.00539885506838, 28.976558446884155],{opacity:0.0}).addTo(map);
+    var sultanahmetGeoJson = {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [28.975925445556637,41.00556280882898],
+                    [28.976461887359616,41.00601620969745],
+                    [28.97744625806808,41.0053442037242],
+                    [28.976904451847073,41.00489079823207],
+                    [28.975925445556637,41.0055628088289]
+                  ]
+                ]
+              }
+            }
+          ]
+    };
+    
+    var sultanahmetGeoJsonFeature = L.geoJson(sultanahmetGeoJson,{
+        
+        style: placeStyle1
+        
+    }).addTo(map);
+    
+    var sultanahmetImage = L.imageOverlay("http://www.planetware.com/photos-large/TR/turkey-istanbul-blue-mosque.jpg", [[41.00762535277516, 28.96270751953125], [41.0014071635879, 28.972663879394528]],{
+        opacity:0 /*Because i want it to appear when i hover to marker*/
+    }).addTo(map);
+    
+    // ** Topkapı
+    
+    var topkapiMarker = L.marker([41.01262862585457, 28.984293937683105],{opacity:0.0}).addTo(map);
+    var topkapiGeoJson = {
   "type": "FeatureCollection",
   "features": [
     {
@@ -406,46 +144,101 @@ $(document).ready(function () {
         "type": "Polygon",
         "coordinates": [
           [
-            [
-              28.98372530937195,
-              41.01100948521007
-            ],
-            [
-              28.981890678405758,
-              41.01182715620899
-            ],
-            [
-              28.982577323913574,
-              41.01265291266133
-            ],
-            [
-              28.982309103012085,
-              41.01278244214613
-            ],
-            [
-              28.984186649322506,
-              41.01468487711532
-            ],
-            [
-              28.986085653305054,
-              41.013980577807814
-            ],
-            [
-              28.984165191650387,
-              41.0108556647792
-            ],
-            [
-              28.98372530937195,
-              41.01100948521007
-            ]
+            [28.98372530937195,41.01100948521007],
+            [28.981890678405758,41.01182715620899],
+            [28.982577323913574,41.01265291266133],
+            [28.982309103012085,41.01278244214613],
+            [28.984186649322506,41.01468487711532],
+            [28.986085653305054,41.013980577807814],
+            [28.984165191650387,41.0108556647792],
+            [28.98372530937195,41.01100948521007]
           ]
         ]
       }
     }
   ]
-}).addTo(map);
+};
+    var topkapiGeoJsonFeature = L.geoJson(topkapiGeoJson,{
+        style: placeStyle1
+    }).addTo(map);
+     var topkapiImage = L.imageOverlay("http://www.planetware.com/photos-large/TR/turkey-istanbul-interior-topkapi-palace.jpg", [[41.01695153641716, 28.98880004882812], [41.009697952118955,28.9984130859375]],{
+        opacity:0 /*Because i want it to appear when i hover to marker*/
+    }).addTo(map);
+    
+    //--------------------DECLARING PLACE CLASS---------------------
+    
+    function Place(modal,marker,geoJson,image,panel){
+        this.modal = modal;
+        this.marker = marker;
+        this.geoJson = geoJson;
+        this.image = image;
+        this.panel = panel;
+        
+        var markerHover = function() {
+            marker.on('mouseover',function(){
+                this.setOpacity(0);
+            });
+            marker.on('mouseout',function(){
+                this.setOpacity(0.0);
+            });
+        };
+       
+        var panelHover = function(){
+                panel.hover(
+                    function() {
+                 geoJson.setStyle(placeStyle2);
 
-    ayasofya.on('click', function(e){
+             },     function() {
+                 geoJson.setStyle(placeStyle1);
+            }
+            );
+        
+        };
+        
+         var geoJsonHover = function() {
+            geoJson.on('mouseover',function(){
+                geoJson.setStyle(placeStyle2);
+            });
+            geoJson.on('mouseout',function(){
+                geoJson.setStyle(placeStyle1);
+            });
+        
+        };
+        
+        var sidePanelClick = function() {
+            panel.click(function() {
+                map.setView(marker.getLatLng(),16);
+            });
+        };
+        
+        var modalOpens = function() {
+            geoJson.on('click', function() {
+                modal.modal('show');
+            });
+        
+        };
+        
+        return [panelHover(), markerHover(), geoJsonHover(), sidePanelClick(), modalOpens()];
+       
+    }
+    
+    
+    
+    
+    var ayasofya= new Place($('#ayaSofyaModal'),ayasofyaMarker,ayaSofyaGeojsonFeature,ayaSofyaImage,$('#ayaSofyaPanel'));
+    var sultanahmet = new Place($('#sultanahmetModal'),sultanahmetMarker,sultanahmetGeoJsonFeature, sultanahmetImage,$('#sultanahmetPanel'));       var topkapi = new Place($('#topkapiModal'),topkapiMarker,topkapiGeoJsonFeature, topkapiImage, $('#topkapiPanel'));
+
+    
+    
+    /*
+    var onClickSetView = function(){
+        map.setView(this.getLatLng(),20);
+    };
+    var onClickModal = function(){
+        
+    };
+
+    ayasofya.on('click', function(){
         map.setView(ayasofya.getLatLng(),20);
         $('#ayaSofyaModal').modal('show');
     });
@@ -453,21 +246,18 @@ $(document).ready(function () {
         map.setView(sultanAhmet.getLatLng(),20);
         $('#sultanAhmetModal').modal('show');
     });
-    var ayaSofya = "http://www.planetware.com/photos-large/TR/turkey-istanbul-aya-sofya.jpg",
-    imageBounds = [[41.00963318437629, 28.977679610252377], [41.00902598369244, 28.978940248489383]];
+   
     
     var cerveveBounds = [[41.008362104541405, 28.979954123497006],
                          [41.00902598369244, 28.978940248489383],
                          [41.00962104041744, 28.978929519653317],
                          [41.00963318437629, 28.977679610252377],
                          [41.00902598369244, 28.97767424583435],
-                         [41.00902598369244, 28.978940248489383 ]];
+                         [41.00902598369244, 28.978940248489383]];
     
     var cerceve = L.polyline(cerveveBounds, {color:'green', opacity:0, clickable: false}).addTo(map);
         cerceve.bringToFront();
-    var ayaSofyaImage = L.imageOverlay(ayaSofya, imageBounds,{
-        opacity:0
-    }).addTo(map);
+   
     
     ayasofya.on('mouseover', function() {
         ayaSofyaImage.setOpacity(0.7);
@@ -479,9 +269,6 @@ $(document).ready(function () {
     });
     
     //SIDE PANEL CLICK EVENTS
-    $('#collapsingSideBar').click(function(){
-        $('#accordion').collapse('hide')
-    });
     
     $('#ayaSofyaPanel').click(function(){
         map.setView(ayasofya.getLatLng(),20);
@@ -492,5 +279,5 @@ $(document).ready(function () {
     $('#topkapiPanel').click(function(){
         map.setView(topkapi.getLatLng(),20);
     });
-   
+   */
 });
