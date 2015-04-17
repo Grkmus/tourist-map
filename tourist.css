@@ -15,6 +15,7 @@ body {
 .panel-group {
     width: 30%;
     float: right;
+    margin-top: -20px;
 }
 .panelimg {
     position: relative;
