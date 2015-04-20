@@ -372,7 +372,7 @@ $(document).ready(function () {
 
     // ---------------------------DECLARING PLACE PROPERTIES: MARKERS,GEOJSONs etc -------------------
 
-
+    console.log("naber loo");
     // ** Ayasofya
 
     var ayasofyaMarker = L.marker([41.00838639292091, 28.97994875907898], { opacity: 0.0 }).addTo(map);
