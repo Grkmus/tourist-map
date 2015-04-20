@@ -1,239 +1,237 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" >
-    
+    <meta charset="UTF-8">
+
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="tourist.css">
-	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <script src="geoJsons/historicalRegionGeoJson.geojson" type="text/javascript"></script>
-    <script src="geoJsons/kadikoyRegionGeoJson.geojson" type="text/javascript"></script>
-    <script src="geoJsons/modernRegionGeoJson.geojson" type="text/javascript"></script>
-    <script src="geoJsons/ayaSofyaGeoJson.geojson" type="text/javascript"></script>
-    <script src="geoJsons/sultanahmetGeoJson.geojson" type="text/javascript"></script>
-    <script src="geoJsons/topkapiGeoJson.geojson" type="text/javascript"></script>
+    
     <title></title>
-   
+
 </head>
 <body>
-    <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
+    <nav>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Brand</a>
+                </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" id="collapsingSideBar">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-</nav>
-    
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" id="collapsingSideBar">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </nav>
+
     <!-- *************************************   MODALS  *********************************** -->
-    
-<div id="sultanahmetModal" class="modal fade">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-          <img src="http://www.planetware.com/photos-large/TR/turkey-istanbul-blue-mosque.jpg" style="height:200px; width:400px; margin:10px; float:left;" /> 
-        <p>After the Peace of Zsitvatorok and the result of the war with Persia, Sultan Ahmet I, decided to build a big mosque in Istanbul to reassert Ottoman power. It would be the first imperial mosque for more than forty years. While his predecessors had paid for their mosques with their spoil of war, Ahmet the First had to remove the funds of the Treasury, because he had not gained remarkable victories. It caused the anger of the ulema, the Muslim jurists. The mosque was built on the site of the palace of the Byzantine emperors, in front of the basilica Ayasofya (at that time, the primary imperial mosque in Istanbul) and the hippodrome, a site of significant symbolic meaning as it dominated the city skyline from the south. Big parts of the south shore of the mosque rest on the foundations, the vaults of the old Grand Palace.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-    
+
+    <div id="sultanahmetModal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <img src="http://www.planetware.com/photos-large/TR/turkey-istanbul-blue-mosque.jpg" style="height:200px; width:400px; margin:10px; float:left;" />
+                    <p>After the Peace of Zsitvatorok and the result of the war with Persia, Sultan Ahmet I, decided to build a big mosque in Istanbul to reassert Ottoman power. It would be the first imperial mosque for more than forty years. While his predecessors had paid for their mosques with their spoil of war, Ahmet the First had to remove the funds of the Treasury, because he had not gained remarkable victories. It caused the anger of the ulema, the Muslim jurists. The mosque was built on the site of the palace of the Byzantine emperors, in front of the basilica Ayasofya (at that time, the primary imperial mosque in Istanbul) and the hippodrome, a site of significant symbolic meaning as it dominated the city skyline from the south. Big parts of the south shore of the mosque rest on the foundations, the vaults of the old Grand Palace.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <div id="ayaSofyaModal" class="modal fade">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-          <img src="http://www.planetware.com/photos-large/TR/turkey-istanbul-aya-sofya.jpg" style="height:200px; width:400px; margin:10px; float:left;" /> 
-        <p>It's said that when the Byzantine Emperor Justinian entered his finished church for the first time in AD 536, he cried out "Glory to God that I have been judged worthy of such a work. Oh Solomon, I have outdone you!" The Aya Sofya (formerly the Hagia Sophia) was the emperor's swaggering statement to the world of the wealth and technical ability of his empire. Tradition maintained that the area surrounding the emperor's throne within the church was the official centre of the world. Through its conversion to a mosque after the Ottoman armies conquered Constantinople to its further conversion into a museum in the 20th century, the Aya Sofya has remained one of Istanbul's most cherished landmarks.
-<br/>
-          
-Location: Aya Sofya Meydanı, Sultanahmet
-Official site: <a href="http://www.ayasofyamuzesi.gov.tr">www.ayasofyamuzesi.gov.tr</a></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <img src="http://www.planetware.com/photos-large/TR/turkey-istanbul-aya-sofya.jpg" style="height:200px; width:400px; margin:10px; float:left;" />
+                    <p>
+                        It's said that when the Byzantine Emperor Justinian entered his finished church for the first time in AD 536, he cried out "Glory to God that I have been judged worthy of such a work. Oh Solomon, I have outdone you!" The Aya Sofya (formerly the Hagia Sophia) was the emperor's swaggering statement to the world of the wealth and technical ability of his empire. Tradition maintained that the area surrounding the emperor's throne within the church was the official centre of the world. Through its conversion to a mosque after the Ottoman armies conquered Constantinople to its further conversion into a museum in the 20th century, the Aya Sofya has remained one of Istanbul's most cherished landmarks.
+                        <br />
 
-<div id="topkapiModal" class="modal fade">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-          <img src="http://www.gezilmesigerekenyerler.com/wp-content/uploads/2014/04/topkapi-sarayi-011.jpg" style="height:200px; width:400px; margin:10px; float:left;" /> 
-          
-        <p>After the conquest of Istanbul by Mehmed the Conqueror at 1453, construction of the Topkapı Palace was started at the year 1460 and completed at 1478 . Palace was built upon a 700.000 squaremeters area on an Eastern Roman Acropolis located at the Istanbul Peninsula between Sea of Marmara, Bosphorus and the Golden Horn. Topkapı Palace, was the administrative, educational and art center of the Empire for nearly four hundred years since Mehmed the Conqueror until Sultan Abdulmecid who is the thirty-first Sultan. Although Palace was abandoned by the Ottoman Dynasty by moving to the Dolmabahçe Palace at middle 19th century, Topkapı Palace was protected its importance everytime.
-            After the establishment of the Republic of Turkey, Topkapı Palace, was transformed into a museum at the date April 3th 1924 and it was also the first museum of the Republic of Turkey. Topkapı Palace Museum is covering approximately 400.000 squaremeters at the present day. Topkapı Palace divided from the city from the land-side by the Imperial Walls which is made by Mehmed the Conqueror. It divided from the city also from the sea-side by the Byzantine Walls. Topkapı Palace is one of the biggest palace-museums with its architectural structures, collections and approximately 300.000 archive papers.
-There are surroundings like gardens and squares around the Palace. Palace which its Main Gate located at the Hagia-Sophia side, has four courtyards which has passages between them. At the first courtyard, Hagia-Irene Church which was used as Armory and the outer service buildings like Mint, Oven and Hospital were located there.
-            Second Courtyard was the Divan Square (Square of Justice) that hosting the administrative buildings fort the Empire. This courtyard was also a ceremonial courtyard. Divan-ı Hümayun (Kubbealtı / Imperial Council) and Treasury of the Divan-ı Hümayun were located on that courtyard. Behind the divan structure, there is the Tower of Justice which represents justice of the Sultan. Dormitory of the Halberdiers with Tresses and the Entrance of Harem were also located at this courtyard. There are also Privy Stable structures at the same side around an inner courtyard. At the Marmara side of the Courtyard of Justice, there are the Palace Kitchens and additional service buildings. Babüssaade (Gate of Felicity) where coronation, funeral and festival ceremonies held is located at the Northern side of the Courtyard of Justice.
-            The third Courtyard (Enderun – Inner Palace) was the section that the Palace aghas were educated and assigned to high ranks of the State. It formed by the dormitories and the structures belongs to the Sultan. Hall of Audience where Sultan accepts viziers and ambassadors, Enderun Library which was constructed by the Sultan Ahmed III, Treasury of Enderun also known as Conqueror’s Pavilion, Privy Room (Chamber of Sultan) and the Aghas’ Mosque which was constructed for the Enderun aghas at the reign of Fatih are the important structures of this courtyard. Courtyard is surrounded by the Big and Small Room Wards, Expeditionary Force Ward, Pantries’ Ward, Treasure Ward and the Privy Room Ward which added to the Privy Room at the 19th century.
-            From the Privy Room, and the Enderun Courtyard, there are passages to the Imperial Sofa courtyard which hosts to the kiosks and gardens. At the Marble Terrace part of this courtyard, there are Revan and Baghdat Kiosks, Circumsision Room and the Iftaree Canopy. Under this terrace, there is a hanging flower garden which surrounded by wooden Sofa Kiosk and the Tower of the Chief-Physician. At the Marmara side of this garden, there are Sofa Mosque, Mecidiye Kiosk and Wardrobe Room. It also known that there are lots of kiosks and service structures at the Privy Gardens which surrounds the Palace in axis of Maramara, Seraglio-Point and the Golden Horn.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+                        Location: Aya Sofya Meydanı, Sultanahmet
+                        Official site: <a href="http://www.ayasofyamuzesi.gov.tr">www.ayasofyamuzesi.gov.tr</a>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
+    <div id="topkapiModal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <img src="http://www.gezilmesigerekenyerler.com/wp-content/uploads/2014/04/topkapi-sarayi-011.jpg" style="height:200px; width:400px; margin:10px; float:left;" />
 
-<!-- **********************************COLLAPSING PANELS************************************* -->
+                    <p>
+                        After the conquest of Istanbul by Mehmed the Conqueror at 1453, construction of the Topkapı Palace was started at the year 1460 and completed at 1478 . Palace was built upon a 700.000 squaremeters area on an Eastern Roman Acropolis located at the Istanbul Peninsula between Sea of Marmara, Bosphorus and the Golden Horn. Topkapı Palace, was the administrative, educational and art center of the Empire for nearly four hundred years since Mehmed the Conqueror until Sultan Abdulmecid who is the thirty-first Sultan. Although Palace was abandoned by the Ottoman Dynasty by moving to the Dolmabahçe Palace at middle 19th century, Topkapı Palace was protected its importance everytime.
+                        After the establishment of the Republic of Turkey, Topkapı Palace, was transformed into a museum at the date April 3th 1924 and it was also the first museum of the Republic of Turkey. Topkapı Palace Museum is covering approximately 400.000 squaremeters at the present day. Topkapı Palace divided from the city from the land-side by the Imperial Walls which is made by Mehmed the Conqueror. It divided from the city also from the sea-side by the Byzantine Walls. Topkapı Palace is one of the biggest palace-museums with its architectural structures, collections and approximately 300.000 archive papers.
+                        There are surroundings like gardens and squares around the Palace. Palace which its Main Gate located at the Hagia-Sophia side, has four courtyards which has passages between them. At the first courtyard, Hagia-Irene Church which was used as Armory and the outer service buildings like Mint, Oven and Hospital were located there.
+                        Second Courtyard was the Divan Square (Square of Justice) that hosting the administrative buildings fort the Empire. This courtyard was also a ceremonial courtyard. Divan-ı Hümayun (Kubbealtı / Imperial Council) and Treasury of the Divan-ı Hümayun were located on that courtyard. Behind the divan structure, there is the Tower of Justice which represents justice of the Sultan. Dormitory of the Halberdiers with Tresses and the Entrance of Harem were also located at this courtyard. There are also Privy Stable structures at the same side around an inner courtyard. At the Marmara side of the Courtyard of Justice, there are the Palace Kitchens and additional service buildings. Babüssaade (Gate of Felicity) where coronation, funeral and festival ceremonies held is located at the Northern side of the Courtyard of Justice.
+                        The third Courtyard (Enderun – Inner Palace) was the section that the Palace aghas were educated and assigned to high ranks of the State. It formed by the dormitories and the structures belongs to the Sultan. Hall of Audience where Sultan accepts viziers and ambassadors, Enderun Library which was constructed by the Sultan Ahmed III, Treasury of Enderun also known as Conqueror’s Pavilion, Privy Room (Chamber of Sultan) and the Aghas’ Mosque which was constructed for the Enderun aghas at the reign of Fatih are the important structures of this courtyard. Courtyard is surrounded by the Big and Small Room Wards, Expeditionary Force Ward, Pantries’ Ward, Treasure Ward and the Privy Room Ward which added to the Privy Room at the 19th century.
+                        From the Privy Room, and the Enderun Courtyard, there are passages to the Imperial Sofa courtyard which hosts to the kiosks and gardens. At the Marble Terrace part of this courtyard, there are Revan and Baghdat Kiosks, Circumsision Room and the Iftaree Canopy. Under this terrace, there is a hanging flower garden which surrounded by wooden Sofa Kiosk and the Tower of the Chief-Physician. At the Marmara side of this garden, there are Sofa Mosque, Mecidiye Kiosk and Wardrobe Room. It also known that there are lots of kiosks and service structures at the Privy Gardens which surrounds the Palace in axis of Maramara, Seraglio-Point and the Golden Horn.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- **********************************COLLAPSING PANELS************************************* -->
+    <!-- GENEL BILGI -->
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="genelBilgi">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        GENEL BILGI
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    <p>
 
-<!-- GENEL BILGI -->
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="genelBilgi">
-      <h4 class="panel-title">
-        <a  data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          GENEL BILGI
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-          <p>
-          
-        Coveted by empires across the centuries, straddling both Europe and Asia, Istanbul is one of the world's great metropolises. Founded around 1000 BC, the colony of Byzantium grew into the Byzantine Empire's great capital of Constantinople and after the Ottoman conquest of the city, retained its glorious place as the heart of their empire. The city (officially renamed Istanbul after the founding of the Turkish Republic) is liberally scattered with glorious remnants of its long and illustrious history ,and the sightseeing here will impress even the most monument-weary visitor.
+                        Coveted by empires across the centuries, straddling both Europe and Asia, Istanbul is one of the world's great metropolises. Founded around 1000 BC, the colony of Byzantium grew into the Byzantine Empire's great capital of Constantinople and after the Ottoman conquest of the city, retained its glorious place as the heart of their empire. The city (officially renamed Istanbul after the founding of the Turkish Republic) is liberally scattered with glorious remnants of its long and illustrious history ,and the sightseeing here will impress even the most monument-weary visitor.
 
-As well as the big four (Aya Sofya, Topkapı Palace, Blue Mosque, and Grand Bazaar) leave enough time to explore the many other sights. Although many tourist attractions are located in, or near, the old city district of Sultanahmet, there is a dazzling array of other tourist attractions throughout the further reaches of the city.
-              </p>
-      </div>
-    </div>
-  </div>
-    
-<!-- HAGIA SOPHIA -->
-    
-  <div class="panel panel-default">
-    <div class="panel-heading"  role="tab" >
-      <h4 class="panel-title">
-        <a  id="ayaSofyaPanel" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          HAGIA SOPHIA
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-      <div class="panel-body">
-          <img class="panelimg" src="http://www.planetware.com/photos-large/TR/turkey-istanbul-aya-sofya.jpg"/>
-        It's said that when the Byzantine Emperor Justinian entered his finished church for the first time in AD 536, he cried out "Glory to God that I have been judged worthy of such a work. Oh Solomon, I have outdone you!" The Aya Sofya (formerly the Hagia Sophia) was the emperor's swaggering statement to the world of the wealth and technical ability of his empire. Tradition maintained that the area surrounding the emperor's throne within the church was the official centre of the world. Through its conversion to a mosque after the Ottoman armies conquered Constantinople to its further conversion into a museum in the 20th century, the Aya Sofya has remained one of Istanbul's most cherished landmarks.
+                        As well as the big four (Aya Sofya, Topkapı Palace, Blue Mosque, and Grand Bazaar) leave enough time to explore the many other sights. Although many tourist attractions are located in, or near, the old city district of Sultanahmet, there is a dazzling array of other tourist attractions throughout the further reaches of the city.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-Location: Aya Sofya Medanı, Sultanahmet
-Official site: www.ayasofyamuzesi.gov.tr
-      </div>
-    </div>
-  </div>
-    
-    <!-- SULTANAHMET -->
-    
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" >
-      <h4 class="panel-title">
-        <a id="sultanahmetPanel" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          SULTANAHMET CAMII
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-      <div class="panel-body">
-          <img class="panelimg" src="http://www.planetware.com/photos-large/TR/turkey-istanbul-blue-mosque.jpg"/>
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-    
-     <!-- TOPKAPI -->
-    
-    <div class="panel panel-default">
-    <div class="panel-heading" role="tab" >
-      <h4 class="panel-title">
-        <a id="topkapiPanel" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
-          TOPKAPI MUSEUM
-        </a>
-      </h4>
-    </div>
-    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-      <div class="panel-body">
-          <img class="panelimg" src="http://www.planetware.com/photos-large/TR/turkey-istanbul-interior-topkapi-palace.jpg"/>
-        It's said that when the Byzantine Emperor Justinian entered his finished church for the first time in AD 536, he cried out "Glory to God that I have been judged worthy of such a work. Oh Solomon, I have outdone you!" The Aya Sofya (formerly the Hagia Sophia) was the emperor's swaggering statement to the world of the wealth and technical ability of his empire. Tradition maintained that the area surrounding the emperor's throne within the church was the official centre of the world. Through its conversion to a mosque after the Ottoman armies conquered Constantinople to its further conversion into a museum in the 20th century, the Aya Sofya has remained one of Istanbul's most cherished landmarks.
+        <!-- HAGIA SOPHIA -->
 
-Location: Aya Sofya Medanı, Sultanahmet
-Official site: www.ayasofyamuzesi.gov.tr
-      </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                    <a id="ayaSofyaPanel" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        HAGIA SOPHIA
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    <img class="panelimg" src="http://www.planetware.com/photos-large/TR/turkey-istanbul-aya-sofya.jpg" />
+                    It's said that when the Byzantine Emperor Justinian entered his finished church for the first time in AD 536, he cried out "Glory to God that I have been judged worthy of such a work. Oh Solomon, I have outdone you!" The Aya Sofya (formerly the Hagia Sophia) was the emperor's swaggering statement to the world of the wealth and technical ability of his empire. Tradition maintained that the area surrounding the emperor's throne within the church was the official centre of the world. Through its conversion to a mosque after the Ottoman armies conquered Constantinople to its further conversion into a museum in the 20th century, the Aya Sofya has remained one of Istanbul's most cherished landmarks.
+
+                    Location: Aya Sofya Medanı, Sultanahmet
+                    Official site: www.ayasofyamuzesi.gov.tr
+                </div>
+            </div>
+        </div>
+
+        <!-- SULTANAHMET -->
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                    <a id="sultanahmetPanel" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        SULTANAHMET CAMII
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    <img class="panelimg" src="http://www.planetware.com/photos-large/TR/turkey-istanbul-blue-mosque.jpg" />
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+
+        <!-- TOPKAPI -->
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                    <a id="topkapiPanel" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+                        TOPKAPI MUSEUM
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="panel-body">
+                    <img class="panelimg" src="http://www.planetware.com/photos-large/TR/turkey-istanbul-interior-topkapi-palace.jpg" />
+                    It's said that when the Byzantine Emperor Justinian entered his finished church for the first time in AD 536, he cried out "Glory to God that I have been judged worthy of such a work. Oh Solomon, I have outdone you!" The Aya Sofya (formerly the Hagia Sophia) was the emperor's swaggering statement to the world of the wealth and technical ability of his empire. Tradition maintained that the area surrounding the emperor's throne within the church was the official centre of the world. Through its conversion to a mosque after the Ottoman armies conquered Constantinople to its further conversion into a museum in the 20th century, the Aya Sofya has remained one of Istanbul's most cherished landmarks.
+
+                    Location: Aya Sofya Medanı, Sultanahmet
+                    Official site: www.ayasofyamuzesi.gov.tr
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
     <div id="map"></div>
-
+    <script type="text/javascript" src="geojsons/placesGeoJson.geojson"></script>
+    <script src="geojsons/regionsGeoJson.geojson"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-	<script src="tourist.js"></script>
+    <script src="tourist.js"></script>
     <script src="https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 </body>
 </html>
