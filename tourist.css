@@ -1,26 +1,2 @@
-body {
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
-    width: 100%;
-}
-#map {
-  	width:70%;
-  	height:100%;
-  	border: solid gray;
-    position: absolute;
-    margin-top: -20px;
-}
-
-.panel-group {
-    width: 30%;
-    float: right;
-    margin-top: -20px;
-}
-.panelimg {
-    position: relative;
-    width: 50%;
-    height: 30%;
-    margin: 10px;
-    float: left;
+﻿body {
 }
