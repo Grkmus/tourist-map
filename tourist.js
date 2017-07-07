@@ -1,9 +1,6 @@
 ﻿$(document).ready(function () {
 
     //------------------------------DECLARING MAP--------------------
-
-
-
     var baseMap = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
     });
@@ -21,7 +18,7 @@
     map.on('click', function (e) {
         console.log(e.latlng);
     });
-    var ayaSofyaGeoJson = {
+    var ayasofyaGeoJson = {
         "type": "FeatureCollection",
         "features": [
           {
@@ -62,6 +59,7 @@
     var sultanahmetGeoJson = {
         "type": "FeatureCollection",
         "features": [
+
           {
               "type": "Feature",
               "properties": {},
@@ -164,6 +162,7 @@
           }
         ]
     };
+
     var kadikoyRegionGeoJson = {
         "type": "FeatureCollection",
         "features": [
@@ -252,6 +251,7 @@
           }
         ]
     };
+
     var modernRegionGeoJson = {
         "type": "FeatureCollection",
         "features": [
@@ -359,25 +359,25 @@
 
     var historicalRegionGeoJsonFeature = L.geoJson(historicalRegionGeoJson, {
         style: regionStyle1
-    }).addTo(map);
+    });
 
     var modernRegionGeoJsonFeature = L.geoJson(modernRegionGeoJson, {
         style: regionStyle2
-    }).addTo(map);
+    });
 
     var kadikoyRegionGeoJsonFeature = L.geoJson(kadikoyRegionGeoJson, {
         style: regionStyle3
-    }).addTo(map);
+    });
 
     // ---------------------------DECLARING PLACE PROPERTIES: MARKERS,GEOJSONs etc -------------------
 
 
-    // ** Ayasofya
+    // ** ayasofya
 
     var ayasofyaMarker = L.marker([41.00838639292091, 28.97994875907898], { opacity: 0.0 }).addTo(map);
 
 
-    var ayaSofyaGeojsonFeature = L.geoJson(ayaSofyaGeoJson, {
+    var ayasofyaGeojsonFeature = L.geoJson(ayasofyaGeoJson, {
 
         style: placeStyle1
 
@@ -410,68 +410,57 @@
 
     //--------------------DECLARING PLACE CLASS---------------------
 
-   
-
-    var placeList = [ayaSofyaGeojsonFeature, topkapiGeoJsonFeature, sultanahmetGeoJsonFeature];
-    var regionList = [historicalRegionGeoJsonFeature, modernRegionGeoJsonFeature, kadikoyRegionGeoJsonFeature];
+    var placeList = [ayasofyaGeojsonFeature, topkapiGeoJsonFeature, sultanahmetGeoJsonFeature];
+    var regionList = [historicalRegionGeoJsonFeature,modernRegionGeoJsonFeature, kadikoyRegionGeoJsonFeature];
     for (var i = 0; i < placeList.length; i++) {
         placeList[i].addTo(map);
     }
+    //for (var i = 0; i < regionList.length; i++) {
+      //regionList[i].addTo(map);
+    //}
+    //debugger;
+    var ayasofyaPanel = $('#ayasofyaPanel');
+    var sultanahmetPanel = $('#sultanahmetPanel');
+    var topkapiPanel = $('#topkapiPanel');
+    var ayasofyaModal = $('#ayasofyaModal');
+    var sultanahmetModal = $('#sultanahmetModal');
+    var topkapiModal = $('#topkapiModal');
+
     function Place(modal, marker, geoJson, panel) {
         this.modal = modal;
         this.marker = marker;
         this.geoJson = geoJson;
         this.panel = panel;
-        this.panelHover = panel.hover(
-            function () {
+        this.panelHover = panel.hover(function () {
+          ////debugger;
                 geoJson.setStyle(placeStyle2);
-
-            }, function () {
+            },
+            function () {
                 geoJson.setStyle(placeStyle1);
             });
-         
-        
-        /* var geoJsonHover = function () {
-            geoJson.on('mouseover', function () {
+        this.geoJsonHover =geoJson.on('mouseover', function () {
                 geoJson.setStyle(placeStyle2);
             });
             geoJson.on('mouseout', function () {
                 geoJson.setStyle(placeStyle1);
             });
 
-        };
-
-        var sidePanelClick = function () {
-            panel.click(function () {
+        this.sidePanelClick = panel.click(function () {
                 map.setView(marker.getLatLng(), 16);
             });
-        };
 
-        var modalOpens = function () {
-            geoJson.on('click', function () {
+        this.modalOpens = geoJson.on('click', function () {
+              //debugger;
                 modal.modal('show');
             });
 
-        };
-
-       */
-
     }
+    var ayasofya = new Place(ayasofyaModal, ayasofyaMarker, ayasofyaGeojsonFeature, ayasofyaPanel);
+    var sultanahmet = new Place(sultanahmetModal, sultanahmetMarker, sultanahmetGeoJsonFeature, sultanahmetPanel);
+    var topkapi = new Place(topkapiModal, topkapiMarker, topkapiGeoJsonFeature, topkapiPanel);
 
-    
-    var ayasofya = new Place($('#ayaSofyaModal'), ayasofyaMarker, ayaSofyaGeojsonFeature, $('#ayaSofyaPanel'));
-    var sultanahmet = new Place($('#sultanahmetModal'), sultanahmetMarker, sultanahmetGeoJsonFeature, $('#sultanahmetPanel'));
-    var topkapi = new Place($('#topkapiModal'), topkapiMarker, topkapiGeoJsonFeature, $('#topkapiPanel'));
-    /*
-    ayasofya.prototype.panelHover = panel.hover(
-            function () {
-                geoJson.setStyle(placeStyle2);
 
-            }, function () {
-                geoJson.setStyle(placeStyle1);
-            });
-    */
-   // ayasofya.panelHover();
-    
+
+
 
 });
